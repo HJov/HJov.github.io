@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1501973801540-537f08ccae7f?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .converter {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-align: center;
+      position: relative;
+      max-width: 350px;
+      width: 100%;
+    }
+    .converter img {
+      width: 60px;
+      position: absolute;
+      top: -30px;
+      left: calc(50% - 30px);
+    }
+    .converter h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .field-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .field-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .field-group input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .options {
+      margin: 15px 0;
+      text-align: left;
+    }
+    .options label {
+      margin-right: 10px;
+      font-size: 0.9em;
+    }
+    button {
+      background-color: #d9534f;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #c9302c;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="converter">
+    <img src="https://img.icons8.com/ios-filled/100/000000/thermometer.png" alt="Thermometer Icon">
+    <h2>Temp Converter</h2>
+
+    <div class="field-group">
+      <label for="tempInput">Enter Temperature</label>
+      <input type="number" id="tempInput" placeholder="e.g., 25">
+    </div>
+
+    <div class="options">
+      <label><input type="radio" name="conversion" value="cToF" checked> Celsius → Fahrenheit</label>
+      <label><input type="radio" name="conversion" value="fToC"> Fahrenheit → Celsius</label>
+    </div>
+
+    <button onclick="convertTemp()">Convert</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convertTemp() {
+      const input = parseFloat(document.getElementById('tempInput').value);
+      if (isNaN(input)) {
+        document.getElementById('result').textContent = 'Please enter a valid number.';
+        return;
+      }
+      const mode = document.querySelector('input[name="conversion"]:checked').value;
+      let result;
+      let unit;
+      if (mode === 'cToF') {
+        result = (input * 9/5) + 32;
+        unit = '°F';
+      } else {
+        result = (input - 32) * 5/9;
+        unit = '°C';
+      }
+      document.getElementById('result').textContent = `Result: ${result.toFixed(2)} ${unit}`;
+    }
+  </script>
+</body>
+</html>
