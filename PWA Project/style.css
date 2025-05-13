@@ -1,0 +1,201 @@
+/* Main App Styles */
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --accent-color: #0f3460;
+    --highlight-color: #e94560;
+    --text-light: #f1f1f1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    overflow-x: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+.app-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin: 0;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.6);
+}
+
+/* Canvas Styles */
+.canvas-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#spaceCanvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: var(--secondary-color);
+}
+
+.loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(26, 26, 46, 0.7);
+    z-index: 10;
+}
+
+/* Info Card Styles */
+.info-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.info-card h2 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.info-card p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#playAudioBtn {
+    background-color: var(--highlight-color);
+    border: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+#playAudioBtn:hover {
+    background-color: #c13650;
+    transform: scale(1.05);
+}
+
+/* Topic Navigation */
+.topic-navigation {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.topic-button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.topic-button:hover {
+    background-color: var(--highlight-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.topic-button.active {
+    background-color: var(--highlight-color);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.topic-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(26, 26, 46, 0.8);
+    margin-top: auto;
+    border-top: 1px solid var(--accent-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 15px;
+    }
+    
+    .info-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .info-card p {
+        font-size: 1rem;
+    }
+    
+    .topic-button {
+        padding: 10px;
+    }
+}
+
+/* Install Button */
+#install-button {
+    border: 2px solid var(--highlight-color);
+    color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
+#install-button:hover {
+    background-color: var(--highlight-color);
+    color: var(--text-light);
+}
+
+/* Animation for planet rotation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-animation {
+    animation: rotate 60s linear infinite;
+}

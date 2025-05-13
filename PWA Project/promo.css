@@ -1,0 +1,226 @@
+/* Promotional Page Styles */
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --accent-color: #0f3460;
+    --highlight-color: #e94560;
+    --text-light: #f1f1f1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, #0a1128, #16213e);
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/stars-bg.jpg');
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    color: #fff;
+    text-shadow: 0 0 15px rgba(233, 69, 96, 0.6);
+}
+
+.app-preview {
+    max-height: 600px;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.btn-primary {
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ca3a51;
+    border-color: #ca3a51;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section */
+.features {
+    background-color: var(--secondary-color);
+}
+
+.feature-card {
+    background-color: var(--accent-color);
+    border-radius: 12px;
+    padding: 30px;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Screenshots Section */
+.bg-darker {
+    background-color: #0d1b2a;
+}
+
+.screenshot-card {
+    transition: all 0.3s ease;
+}
+
+.screenshot-card:hover {
+    transform: scale(1.05);
+}
+
+.screenshot-card img {
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Download Section */
+.download {
+    background: linear-gradient(to top, #0a1128, #16213e);
+    position: relative;
+    overflow: hidden;
+}
+
+.download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/stars-bg.jpg');
+    background-size: cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.download .container {
+    position: relative;
+    z-index: 1;
+}
+
+.install-instructions {
+    margin-top: 30px;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--highlight-color);
+    color: white;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.qr-code-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.qr-code {
+    max-width: 250px;
+}
+
+.qr-code-container p {
+    color: #333;
+}
+
+/* Footer */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+}
