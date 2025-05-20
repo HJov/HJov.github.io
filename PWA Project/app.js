@@ -19,7 +19,7 @@ installBtn.addEventListener('click', async()=>{
 const ctx = document.getElementById('stage').getContext('2d');
 const audio = new Audio(), menu = document.getElementById('menu');
 
-fetch('/data/topics.json')
+fetch('./data/topics.json')
   .then(r=>r.json())
   .then(d=>init(d.planets));
 
