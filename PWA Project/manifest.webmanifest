@@ -1,0 +1,18 @@
+{
+  "name": "SolarScope",
+  "short_name": "SolarScope",
+  "description": "Tap a planet to see facts, art & sound.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0d47a1",
+  "background_color": "#0d1117",
+  "icons": [
+    {
+      "src": "assets/icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
