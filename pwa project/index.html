@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    <link rel="icon" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+</head>
+<body>
+    <header>
+        <h1>Planet Explorer</h1>
+        <button id="install-button" class="hidden">Install App</button>
+    </header>
+    
+    <main>
+        <canvas id="planetCanvas"></canvas>
+        
+        <div class="info-container">
+            <h2 id="planetName">Select a Planet</h2>
+            <p id="planetInfo">Use the menu below to explore planets in our solar system.</p>
+        </div>
+        
+        <div class="menu-container">
+            <button class="planet-button" data-planet="mercury">Mercury</button>
+            <button class="planet-button" data-planet="venus">Venus</button>
+            <button class="planet-button" data-planet="earth">Earth</button>
+            <button class="planet-button" data-planet="mars">Mars</button>
+            <button class="planet-button" data-planet="jupiter">Jupiter</button>
+            <button class="planet-button" data-planet="saturn">Saturn</button>
+            <button class="planet-button" data-planet="uranus">Uranus</button>
+            <button class="planet-button" data-planet="neptune">Neptune</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        // Service worker registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+</html>
